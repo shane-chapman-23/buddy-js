@@ -1,0 +1,22 @@
+{
+  "name": "buddy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "buddy": "./bin/buddy.js"
+  },
+  "scripts": {
+    "start": "node ./bin/buddy.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "chalk": "^5.6.2",
+    "commander": "^14.0.0",
+    "inquirer": "^12.9.4",
+    "open": "^10.2.0"
+  }
+}
