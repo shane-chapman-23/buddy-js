@@ -7,7 +7,7 @@ const configFilePath = path.join(os.homedir(), ".buddyconfig.json");
 const readConfig = () => {
   //Creates user config file if none exist
   if (!fs.existsSync(configFilePath)) {
-    fs.writeFileSync(configFilePath, "{}");
+    writeConfig({});
   }
 
   const fileContents = fs.readFileSync(configFilePath, "utf-8");
@@ -18,6 +18,14 @@ const writeConfig = (configObj) => {
   fs.writeFileSync(configFilePath, JSON.stringify(configObj, null, 2));
 };
 
+const updateConfig = (shortcutName, path) => {
+  let config = readConfig();
+  config[shortcutName] = path;
+  writeConfig(config);
+};
+
 module.exports = {
   readConfig,
+  writeConfig,
+  updateConfig,
 };
