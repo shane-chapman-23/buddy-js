@@ -1,5 +1,5 @@
 const {readConfig} = require("../utils/config");
-const {exec} = require("child_process");
+const openPath = require("../utils/openPath");
 
 const fetchCommand = (shortcutName) => {
   const config = readConfig();
@@ -10,9 +10,7 @@ const fetchCommand = (shortcutName) => {
     process.exit(1);
   }
 
-  exec(`code ${targetPath}`, (err) => {
-    if (err) console.log("Failed to open VS Code:", err);
-  });
+  openPath(targetPath);
 };
 
 module.exports = fetchCommand;
