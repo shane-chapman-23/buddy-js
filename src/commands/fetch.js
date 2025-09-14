@@ -10,6 +10,10 @@ const fetchCommand = (shortcutName) => {
     process.exit(1);
   }
 
+  //src/utils/openPath.js
+  //Opens path in VS Code if it contains a package.json
+  //Opens in windows explorer if its a directory
+  //Opens with windows preferred method for everything else
   openPath(targetPath);
 };
 
