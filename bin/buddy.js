@@ -2,6 +2,7 @@
 const {program} = require("commander");
 const setCommand = require("../src/commands/set");
 const fetchCommand = require("../src/commands/fetch");
+const listCommand = require("../src/commands/list");
 
 program
   .name("buddy")
@@ -17,5 +18,10 @@ program
   .command("fetch <shortcutName>")
   .description("Fetch the shortcuts path")
   .action(fetchCommand);
+
+program
+  .command("list")
+  .description("List all shortcuts and paths")
+  .action(listCommand);
 
 program.parse(process.argv);

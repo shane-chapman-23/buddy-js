@@ -1,7 +1,7 @@
 const {readConfig} = require("../utils/config");
 const openPath = require("../utils/openPath");
 
-const fetchCommand = (shortcutName) => {
+function fetchCommand(shortcutName) {
   const config = readConfig();
   const targetPath = config[shortcutName];
 
@@ -15,6 +15,6 @@ const fetchCommand = (shortcutName) => {
   //Opens in windows explorer if its a directory
   //Opens with windows preferred method for everything else
   openPath(targetPath);
-};
+}
 
 module.exports = fetchCommand;
